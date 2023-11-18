@@ -1,27 +1,38 @@
 # tic-tac-toe
 Description on unittest Test Cases 
-1. Test_Mark_Square;
-   This test_Mark_Square case determines whether the current player's mark is appropriately marked on a square on the game board by the mark_square method.
 
-stages;
-- we should creat instance to initializing a tictactoe game
-- using coordinate (0,0) to call the mark_square function
-- Assert that the value in the corresponding position on the board is equal to the current player's mark (1).
+1. setup
 
-2.Test_switch_player;
- This test_switch_player case determines that players 1 and 2 are appropriately switch between by the switch_player function.
- 
- Stages
- - we should creat instance to initializing a tictactoe game
- - Taking a note of the first player.
- - calling  the switch_player function.
- - Assert that the current player is now the opposite of the initial player.
+- Before every test method in a test class, there is a unique method called setUp. 
+- In this instance, it sets the game's audio mixer to its starting state.
 
-3. Test_play;
-   This test_play case determines whether the play method successfully marks a square on the board in cases where the game hasn't ended.
+ 2. Test_Mark_Square;
 
-stages
-- we should creat instance to initializing a tictactoe game
--  using coordinate (0,0) to call the play function
--  Declaring that the player's mark (1) is equal to the value at the relevant position on the board.
--  Declaring that there is still game in it.
+- This test the mark_square function, which adds a player's mark to the Tic-Tac-Toe board at a given place.
+- It utilizes self and makes two separate calls to mark_square with distinct arguments.
+- 'self.assertEqual' is to verify that the board was updated accurately.
+
+3. Test_squared_available;
+
+- The available_square function, which determines if a square on the board is available, whether it was unoccupied.
+- It uses self and verifies that a square is available both before and after marking it.
+-  uses 'self.assertTrue' and 'self.assertFalse' for assertions.
+
+4. Test_is-Board_Full;
+
+- This  is board full function, which determines whether the Tic Tac Toe board is fully filled, is tested using this way.
+- It first verifies that the board is not full, then moves through each cell, placing Player 1's mark in each one, and lastly verifies that the board is filled.
+
+
+5. Test_check_win:
+
+  - This  check_win function, which ascertains whether a player has won the game, is tested by this method.
+  -  Before and after marking three consecutive squares for Player 1, it looks for a win.
+   
+6. TearDown;
+
+  - This method named tearDown is invoked following every test method.
+  - Here, it turns off the mixer and releases any resources it had gained from the testing.
+
+The unit tests are only run when the script is run directly, not when it is imported as a module.
+with the help of the if __name__ == '__main__': block, the test cases are executed by unittest.main(), and the test results are shown.
