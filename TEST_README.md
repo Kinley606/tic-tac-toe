@@ -36,3 +36,9 @@ Description on unittest Test Cases
 
 The unit tests are only run when the script is run directly, not when it is imported as a module.
 with the help of the if __name__ == '__main__': block, the test cases are executed by unittest.main(), and the test results are shown.
+
+
+References 
+- https://www.youtube.com/watch?si=S12ryN5bv1VyYxj_&fbclid=IwAR3EglZae-QalhJKiVTTNoNgAC8r1--dlFEw5jJbwKqri_zDAtKsu1WZ4tU&v=v1MtwCPTmBI&feature=youtu.be
+- https://www.youtube.com/watch?si=8V9ULoW1nwVc8gxe&fbclid=IwAR2PbuOp4PcRZH58C3yKuEWHB7Jm-NF-O4_I5IxBTolhVNIAqXLnNLJorM8&v=96mDQrlceEk&feature=youtu.be
+
